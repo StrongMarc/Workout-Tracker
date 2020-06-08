@@ -6,6 +6,9 @@ mongoose.connect("mongodb://localhost/workout", {
   useFindAndModify: false
 });
 
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setDate
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate
 let workoutSeed = [
   {
     day: new Date().setDate(new Date().getDate()-10),

@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3000;
 
-// const User = require("./userModel.js");
 const app = express();
 
 app.use(logger("dev"));
@@ -14,8 +13,15 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", { 
+  useNewUrlParser: true 
+});
+
+// routes
+require("./routes/apiRoutes")(app);
+// require("./routes/htmlRoutes")(app);
 
 app.listen(PORT, () => {
   console.log("Server listening on: http://localhost:" + PORT);
 });
+ 
