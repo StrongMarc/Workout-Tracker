@@ -6,11 +6,6 @@ mongoose.connect("mongodb://localhost/workout", {
   useFindAndModify: false
 });
 
-// mongoose.connect("mongodb://user1:password1@ds143241.mlab.com:43241/heroku_hx48m82x", {
-//   useNewUrlParser: true,
-//   useFindAndModify: false
-// });
-
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setDate
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate
 let workoutSeed = [

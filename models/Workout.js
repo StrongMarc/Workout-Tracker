@@ -10,10 +10,21 @@ const exerciseProperties = {
     type: String, 
     required: true 
   },
-  duration: Number,
-  weight: Number,
-  reps: Number, 
-  sets: Number
+  duration: {
+    type: Number 
+  },
+  weight: {
+    type: Number
+  },
+  reps: {
+    type: Number
+  }, 
+  sets: {
+    type: Number
+  },
+  distance: {
+    type: Number
+  },
 };
 
 const workoutSchema = new Schema({
