@@ -1,9 +1,14 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
-mongoose.connect("mongodb://localhost/workout", {
-  useNewUrlParser: true,
-  useFindAndModify: false
+// mongoose.connect("mongodb://localhost/workout", {
+//   useNewUrlParser: true,
+//   useFindAndModify: false
+// });
+
+mongoose.connect(process.env.MONGODB_URI || 
+  "mongodb://user1:password1@ds143241.mlab.com:43241/heroku_hx48m82x", { 
+  useNewUrlParser: true 
 });
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setDate
