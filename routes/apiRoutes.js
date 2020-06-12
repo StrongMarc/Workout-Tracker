@@ -25,8 +25,10 @@ module.exports = function(app) {
   app.get("/api/workouts/range", function(req, res) {
     db.Workout.find({}).then(function(exersices) {
       lastIndex = exersices.length-1
+      console.log(exersices[lastIndex].day)
       lastDay = exersices[lastIndex].day.getDay()+1
-      rangeExcercise = exersices.slice(lastIndex-lastDay, lastIndex)
+      rangeExcercise = exersices.slice(lastIndex-lastDay+1, lastIndex+1)
+      console.log(rangeExcercise)
       res.json(rangeExcercise);
     }).catch(function(err){
       console.log("err", err)
