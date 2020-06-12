@@ -8,10 +8,11 @@ const API = {
       console.log(err)
     }
     const json = await res.json();
-
+    console.log("api11", json[json.length - 1])
     return json[json.length - 1];
   },
   async addExercise(data) {
+    console.log("api15", data)
     const id = location.search.split("=")[1];
 
     const res = await fetch("/api/workouts/" + id, {
@@ -25,14 +26,15 @@ const API = {
     return json;
   },
   async createWorkout(data = {}) {
+    console.log("api29", data)
     const res = await fetch("/api/workouts", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" }
     });
-
+    console.log("api35", res)
     const json = await res.json();
-
+    console.log("api37", json)
     return json;
   },
 

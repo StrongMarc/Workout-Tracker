@@ -2,6 +2,7 @@ async function initWorkout() {
   const lastWorkout = await API.getLastWorkout();
   console.log("Last workout:", lastWorkout);
   if (lastWorkout) {
+    console.log("hi")
     document
       .querySelector("a[href='/exercise?']")
       .setAttribute("href", `/exercise?id=${lastWorkout._id}`);
@@ -58,6 +59,7 @@ function renderWorkoutSummary(summary) {
     totalDistance: "Total Distance Covered"
   };
 
+  console.log("workout61", workoutKeyMap)
   Object.keys(summary).forEach(key => {
     const p = document.createElement("p");
     const strong = document.createElement("strong");
