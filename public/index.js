@@ -9,6 +9,7 @@ async function init() {
     console.log("index9", workout) //xx
     if (workout) {
       location.search = "?id=" + workout._id;
+      console.log("ind-YES!")
     } else {
       document.querySelector("#continue-btn").classList.add("d-none")
     }
