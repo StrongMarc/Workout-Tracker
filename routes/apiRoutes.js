@@ -14,7 +14,7 @@ module.exports = function(app) {
   app.put("/api/workouts/:id", function(req, res) {
     console.log("in route15")
     console.log(req.body)
-    db.Workout.updateOne({ _id: req.params.id },{$set: { exercises: req.body }}).then(function(exercises) {
+    db.Workout.updateOne({ _id: req.params.id },{$push: { exercises: req.body }}).then(function(exercises) {
       console.log("in route18")
       res.json(exercises);
     }).catch(function(err){
